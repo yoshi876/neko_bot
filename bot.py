@@ -1,4 +1,3 @@
-﻿#!/usr/bin/env python
 # coding: utf-8
 import discord
 import requests
@@ -8,8 +7,8 @@ import random
 
 client = discord.Client()
 
-key = ""
-token = ""
+token = "discordbotのトークンを入れてね"
+key = "APIのキーを入れてね"
 
 @client.event
 async def on_ready():
