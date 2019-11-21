@@ -8,8 +8,8 @@ import random
 
 client = discord.Client()
 
-key = "ac04fca45c740d85352e"
-token = "NjM2NTU2NzA2ODYzNzc1NzU0.XbBWWw.vWt0s2rypZveuO2Qz647HfeG6A0"
+key = ""
+token = ""
 
 @client.event
 async def on_ready():
