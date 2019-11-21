@@ -6,7 +6,7 @@ import re
 import random
 
 """
-ユーザーローカル社のチャットボットAPIを用いた前川〇く風ボット
+ユーザーローカル社のチャットボットAPIを用いたネコ風ボット
 https://ai.userlocal.jp/document/free/top/
 上記リンクからAPIキーを申請してください。
 """
