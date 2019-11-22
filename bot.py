@@ -42,19 +42,6 @@ async def on_message(message):
                 #帰ってきたメッセージをキャラクター会話変換APIでネコ語に変換
                 url = "https://chatbot-api.userlocal.jp/api/character?message=" + str(res['result']) + "&key=" + key + "&character_type=cat"
                 res = requests.get(url).json()
-                #それっぽくなるように整形
-                #「な、ニャ」および文末の「ぜ、わ、よ、ｗ」を「にゃ」に変換、文末の「笑」を削除
-                res_text = re.sub("[ぜわよ|ね？|か?|w]$","にゃ",str(res['result']).replace('ニャ', 'にゃ').rstrip("笑"))
-                if re.compile(".*にゃ$").search(res_text):
-                    pass
-                else:
-                    res_text = res_text.replace('な', 'にゃ')
-                #「？」で終わる文以外は、文末に「☆、～♪、～、！」をのいずれか1つををランダムに追加
-                gobi = ["☆","～♪","～","！","",""]
-                if '?' in res_text or '？' in res_text or '！' in res_text: 
-                    m = str(res_text)
-                else:
-                    m = str(res_text) + str(random.choice(gobi))
-                await message.channel.send(m)
+                await message.channel.send(res['result'])
 
 client.run(token)
